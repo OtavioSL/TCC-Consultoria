@@ -1,0 +1,233 @@
+/* Variáveis para fácil personalização */
+:root {
+    --primary-color: #000000; /* Preto para fundo ou texto */
+    --secondary-color: #F2F2F2; /* Branco para fundo ou texto */
+    --accent-color: #13C9F2; /* Cor de destaque (amarelo/laranja) */
+    --text-color: #4F5759; /* Cinza escuro para corpo de texto */
+    --font-family: 'Arial', sans-serif;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header Fixo */
+.main-header {
+    background: var(--secondary-color);
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.main-nav a:hover {
+    color: var(--accent-color);
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.logo .logoImg {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo span {
+    font-size: 20px;
+    color: #4f5759;
+    filter: drop-shadow(2px 2px 0px #48cce2);
+}
+
+.logo img {
+    height: auto;
+    width: 100%;
+    display: block;
+    object-fit: contain;
+}
+
+/* Botões CTA */
+.cta-button {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.primary-cta {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+.primary-cta:hover {
+    background-color: #00bcd4; /* Tonalidade mais escura */
+}
+
+/* Seções de Conteúdo */
+section {
+    padding: 80px 0;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2em;
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 100px; /* Para acomodar o header fixo */
+    background-color: var(--primary-color); /* Fundo escuro */
+    color: var(--secondary-color);
+}
+
+.hero-section h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+
+/* Pilares de Negócio (Lado A, B, C) */
+.pillars-section .container {
+    display: flex;
+    gap: 30px;
+    text-align: center;
+}
+
+.pillar-item {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #eee;
+}
+
+/* Seção com Fundo Escuro */
+.dark-bg {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.dark-bg h2, .dark-bg h4 {
+    color: var(--accent-color);
+}
+
+/* Formulário de Contato */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-section {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.contact-section h2 {
+    color: #00bcd4;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.contact-form .cta-button {
+    background-color: #00bcd4;
+    color: var(--secondary-color);
+    padding: 15px 30px;
+    font-size: 1.2em
+    pointer;
+    border: none;
+    border-radius: 5px;
+    box-shadow: none;
+    transition: bacground-color 0.3s;
+}
+
+.contact-form .cta-button:focus,
+.contact-form .cta-button:active{
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.contact-form .cta-button:hover {
+    background-color: #00a4b8;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 15px;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 1em;
+}
+
+/* Footer */
+.main-footer {
+    background-color: #111;
+    color: #bbb;
+    padding: 30px 0;
+    text-align: center;
+}
