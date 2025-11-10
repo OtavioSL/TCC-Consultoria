@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fase Digital - A proxima fase do seu negócio</title>
     <link rel="stylesheet" href="./public/styles/style.css">
-    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="shortcut icon" href="./public/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
 
 <body>
@@ -28,14 +29,49 @@
     </header>
 
     <main>
+        <section id="home" class="carousel-section">
+        <div class="swiper-container mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="./public/assets/images/Carrossel/01.png" alt="Slide 1">
+                    <div class="slide-content">
+                        <h2>Título Impactante do Slide 1</h2>
+                        <p>Descrição breve do que este slide representa ou anuncia.</p>
+                        <a href="#" class="cta-button primary-cta">SAIBA MAIS</a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="./public/assets/images/Carrossel/02.png" alt="Slide 2">
+                    <div class="slide-content">
+                        <h2>Novidade Incrível para Você</h2>
+                        <p>Aproveite esta oportunidade única que oferecemos.</p>
+                        <a href="#" class="cta-button primary-cta">CONFERIR</a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="./public/assets/images/Carrossel/03.png" alt="Slide 3">
+                    <div class="slide-content">
+                        <h2>Veja Nossos Últimos Cases</h2>
+                        <p>Experiências que transformaram negócios.</p>
+                        <a href="#" class="cta-button primary-cta">VER CASES</a>
+                    </div>
+                </div>
+            </div>
 
-        <section id="home" class="hero-section">
+            <div class="swiper-pagination"></div>
+
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+
+        <!-- <section id="home" class="hero-section">
             <div class="container">
                 <h1>O Título Mais Impactante do Seu Negócio</h1>
                 <p>O lado acadêmico e business do mercado de [Seu Nicho].</p>
                 <a href="#contato" class="cta-button primary-cta large-cta">FALE COM UM CONSULTOR</a>
             </div>
-        </section>
+        </section> -->
 
         <section id="quem-somos" class="about-section">
             <div class="container">
@@ -141,6 +177,7 @@
     </footer>
 
     <script src="./public/js/main.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </body>
 
 </html>

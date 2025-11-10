@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // 1. Menu Fixo / Sticky Header (Opcional: Muda cor/tamanho ao rolar)
+
+    // 1. Menu Fixo / Sticky Header
     const header = document.querySelector('.main-header');
     
     window.addEventListener('scroll', function() {
@@ -10,37 +11,52 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Exemplo de CSS para a classe .scrolled (adicione em style.css):
-    /*
-    .main-header.scrolled {
-        background: rgba(255, 255, 255, 0.95);
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-        padding: 10px 0;
-    }
-    */
-
     // 2. Animação de Scroll Suave (Smooth Scroll)
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    document.querySelectorAll('a[href^="#home"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             
-            // Verifica se o href é apenas '#' para não causar erro
-            if (this.getAttribute('href') === '#') return;
-
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+            const targetId = this.getAttribute('href');
+            
+            // Tratamento para #home e outros IDs
+            if (targetId && targetId !== '#') {
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            } else if (targetId === '#') {
+                // Se o link for apenas '#', volta para o topo
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
         });
     });
 
-    // 3. (Futuro) Inicialização de Slider/Carrossel para Cases
-    // Se você usar uma biblioteca como Swiper.js ou Slick.js
-    // Exemplo:
-    // if (document.querySelector('.case-gallery')) {
-    //     new Swiper('.case-gallery', {
-    //         slidesPerView: 3,
-    //         spaceBetween: 30,
-    //         // Outras opções...
-    //     });
-    // }
+    // 3. Inicialização do Swiper Carousel
+    const swiperContainer = document.querySelector('.mySwiper');
+
+    if (swiperContainer) { // Verifica se o carrossel existe na página
+        new Swiper('.mySwiper', {
+            loop: true, // Faz o carrossel girar infinitamente
+            autoplay: {
+                delay: 5000, // 5 segundos de espera
+                disableOnInteraction: false, // Continua o autoplay mesmo após interação manual
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            // Usando 'slide' conforme sua configuração, mas removendo a configuração 'fade' conflitante
+            effect: 'slide', 
+            speed: 800, // Velocidade da transição em ms
+        });
+    }
 });
