@@ -9,6 +9,7 @@
     --text-color: #4F5759;
     /* Cinza escuro para corpo de texto */
     --font-family: 'Arial', sans-serif;
+    --dark-gray: #333333;
 }
 
 /* Reset básico */
@@ -23,6 +24,7 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--secondary-color);
+    overflow-x: hidden;
 }
 
 .container {
@@ -335,6 +337,14 @@ section h2 {
     text-align: center;
 }
 
+.pillars-section h2 {
+    text-align: center;
+    color: var(--secondary-color);
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
 .pillars-section .container {
     max-width: 1000px;
     padding: 40px 30px;
@@ -400,18 +410,157 @@ section h2 {
     color: var(--secondary-color);
 }
 
+.medium-dark-bg {
+    background-color: var(--dark-gray);
+    color: var(--secondary-color);
+}
+
 .dark-bg h2,
 .dark-bg h4 {
     color: var(--accent-color);
 }
-
-.partner-logos .container {
-    height: auto;
-    width: 100%;
-    display: block;
-    object-fit: contain;
+/* ------------------------------------------------ Cases -------------------------------------------------------------------- */
+/* Seção de Cases */
+.cases-section {
+    padding: 80px 0;
+    /* O fundo escuro vem da classe .dark-bg aplicada no HTML */
 }
 
+.cases-section h2 {
+    /* Cor do título já definida pela classe .dark-bg h2 */
+    margin-bottom: 50px;
+}
+
+/* Grid para Organizar os Cards (4 colunas como no modelo) */
+.case-gallery-grid {
+    display: grid;
+    /* 4 colunas de largura igual, espaçadas */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+    justify-items: center; /* Centraliza os itens na célula */
+    margin: 0 auto;
+    max-width: 1000px; /* Limita a largura do grid */
+}
+
+/* Estilo do Card Individual */
+.case-item-card {
+    /* Fundo escuro sutil para os cards */
+    background-color: #222222; 
+    border-radius: 5px;
+    width: 100%;
+    min-height: 250px; /* Altura mínima para o visual de card */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 0 15px 0; /* Padding apenas na parte inferior */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+/* Tag de Categoria (no topo do card) */
+.case-header-tag {
+    background-color: var(--accent-color); /* Fundo ciano/azul claro */
+    color: var(--primary-color); /* Texto preto */
+    font-size: 0.8em;
+    font-weight: bold;
+    padding: 8px 15px;
+    width: 100%;
+    text-align: center;
+    /* margin-bottom: 20px; */
+}
+
+/* Imagem do Logo do Parceiro/Cliente */
+.case-item-card img {
+    width: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+/* Nome do Cliente (Abaixo da Imagem) */
+.case-client-name {
+    color: var(--secondary-color); /* Texto branco */
+    width: 100%;
+    text-align: center;
+    font-size: 0.9em;
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+/* Responsividade: 
+   Em telas médias (tablets), passa para 2 colunas */
+@media (max-width: 992px) {
+    .case-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Em telas pequenas (celulares), passa para 1 coluna */
+@media (max-width: 576px) {
+    .case-gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --------------------------------------------- Agradecimentos -------------------------------------------------------------- */
+/* Estilos para a Seção de Autoridade e Logos */
+.authority-section .cta-link {
+    background-color: #333333;
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+/* .authority-section h2 {
+    color: var(--primary-color); /* Retorna a cor do título para a cor principal (preto) 
+} */
+
+.partner-logos {
+    display: flex;
+    /* Distribui os logos de forma uniforme com espaço entre eles */
+    justify-content: space-around; 
+    align-items: center;
+    /* Adiciona margem vertical para separar do título e do botão */
+    margin: 40px 0; 
+    /* Garante que o container ocupe a largura total */
+    width: 100%; 
+}
+
+.partner-logos img {
+    /* CONTROLE DE TAMANHO: Altere o max-height para ajustar o tamanho */
+    max-height: 80px; 
+    
+    /* Garante que o logo não estique, mas caiba no max-height */
+    object-fit: contain; 
+    
+    /* Largura máxima para evitar logos gigantes */
+    max-width: 18%; 
+    
+    /* Efeito sutil para integrar ao design */
+    opacity: 0.7; 
+    transition: opacity 0.3s;
+}
+
+.partner-logos img:hover {
+    opacity: 1;
+}
+
+/* Responsividade: Em telas menores (ex: mobile), os logos se empilham */
+@media (max-width: 768px) {
+    .partner-logos {
+        /* Permite que os logos quebrem para a próxima linha */
+        flex-wrap: wrap; 
+        /* Alinha no centro quando quebram */
+        justify-content: center; 
+        gap: 20px;
+    }
+    
+    .partner-logos img {
+        /* Garante que cada logo ocupe até 40% da largura em telas menores */
+        max-width: 40%; 
+    }
+}
+/* ----------------------------------------------------------------------------------------------------------------------------- */
 /* Formulário de Contato */
 .contact-form {
     max-width: 600px;
@@ -464,7 +613,7 @@ section h2 {
     width: 100%;
     font-size: 1em;
 }
-
+/* ----------------------------------------------------------------------------------------------------------------------------- */
 /* Footer */
 .main-footer {
     background-color: #111;
