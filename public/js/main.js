@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // 2. Animação de Scroll Suave (Smooth Scroll)
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    document.querySelectorAll('a[href^="#home"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             
