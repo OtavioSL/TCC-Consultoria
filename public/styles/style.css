@@ -1,10 +1,15 @@
 /* Variáveis para fácil personalização */
 :root {
-    --primary-color: #000000; /* Preto para fundo ou texto */
-    --secondary-color: #F2F2F2; /* Branco para fundo ou texto */
-    --accent-color: #13C9F2; /* Cor de destaque (amarelo/laranja) */
-    --text-color: #4F5759; /* Cinza escuro para corpo de texto */
+    --primary-color: #000000;
+    /* Preto para fundo ou texto */
+    --secondary-color: #F2F2F2;
+    /* Branco para fundo ou texto */
+    --accent-color: #13C9F2;
+    /* Cor de destaque (amarelo/laranja) */
+    --text-color: #4F5759;
+    /* Cinza escuro para corpo de texto */
     --font-family: 'Arial', sans-serif;
+    --dark-gray: #333333;
 }
 
 /* Reset básico */
@@ -19,6 +24,7 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--secondary-color);
+    overflow-x: hidden;
 }
 
 .container {
@@ -111,19 +117,20 @@ body {
 }
 
 .primary-cta:hover {
-    background-color: #00bcd4; /* Tonalidade mais escura */
+    background-color: #00bcd4;
+    /* Tonalidade mais escura */
 }
 
 /* Seções de Conteúdo */
 section {
-    padding: 80px 0;
+    padding: 2px 0;
 }
 
 section h2 {
     text-align: center;
     margin-bottom: 50px;
     font-size: 2em;
-    color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 /* Hero Section */
@@ -133,8 +140,10 @@ section h2 {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding-top: 100px; /* Para acomodar o header fixo */
-    background-color: var(--primary-color); /* Fundo escuro */
+    padding-top: 100px;
+    /* Para acomodar o header fixo */
+    background-color: var(--primary-color);
+    /* Fundo escuro */
     color: var(--secondary-color);
 }
 
@@ -142,34 +151,41 @@ section h2 {
 .carousel-section {
     width: 100%;
     /* Ajuste este padding-top para evitar que o carrossel fique por baixo do header fixo */
-    padding-top: 80px; /* Assumindo que seu header tem altura aprox. de 70-80px */
-    background-color: #f0f0f0; /* Fundo leve para a seção do carrossel */
+    padding-top: 80px;
+    /* Assumindo que seu header tem altura aprox. de 70-80px */
+    background-color: #f0f0f0;
+    /* Fundo leve para a seção do carrossel */
 }
 
 .swiper-container {
     width: 100%;
-    height: 400px; /* Altura do carrossel. Ajuste conforme necessário */
+    height: 400px;
+    /* Altura do carrossel. Ajuste conforme necessário */
     position: relative;
 }
 
 .swiper-slide {
     text-align: center;
     font-size: 18px;
-    background: #fff; /* Fundo padrão para os slides */
+    background: #fff;
+    /* Fundo padrão para os slides */
 
     /* Centraliza o conteúdo do slide (imagem e texto) */
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative; /* Para posicionar o conteúdo */
+    position: relative;
+    /* Para posicionar o conteúdo */
 }
 
 .swiper-slide img {
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Garante que a imagem cubra todo o slide */
-    filter: brightness(60%); /* Escurece um pouco a imagem para o texto se destacar */
+    object-fit: cover;
+    /* Garante que a imagem cubra todo o slide */
+    filter: brightness(60%);
+    /* Escurece um pouco a imagem para o texto se destacar */
 }
 
 .slide-content {
@@ -186,7 +202,8 @@ section h2 {
 .slide-content h2 {
     font-size: 2.5em;
     margin-bottom: 15px;
-    color: white; /* Garante que o título seja branco */
+    color: white;
+    /* Garante que o título seja branco */
 }
 
 .slide-content p {
@@ -197,11 +214,150 @@ section h2 {
 /* Estilo para os botões de navegação e paginação do Swiper */
 .swiper-button-next,
 .swiper-button-prev {
-    color: rgb(0, 0, 0) !important; /* Mude a cor das setas */
+    color: rgb(0, 0, 0) !important;
+    /* Mude a cor das setas */
 }
 
 .swiper-pagination-bullet-active {
-    background: rgb(0, 0, 0) !important; /* Cor do pontinho ativo */
+    background: rgb(0, 0, 0) !important;
+    /* Cor do pontinho ativo */
+}
+
+.about-section {
+    background-image: url(../assets/images/Backgrounds/BG_QuemSomos.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 80px 0;
+    min-height: 400px;
+    background-color: #f0f0f0;
+    color: var(--secondary-color);
+    text-align: center;
+}
+
+/* Estilos para o Grid de Retratos */
+.team-portraits-grid {
+    display: grid;
+    /* 3 colunas de largura igual, com espaçamento de 30px */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+    margin-top: 60px; /* Espaço entre o texto da missão e o grid */
+    padding-top: 20px;
+    max-width: 1200px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.portrait-frame {
+    /* O frame inteiro será o container do retrato */
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo semi-transparente escuro para destacar */
+    padding: 25px 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra suave */
+    transition: transform 0.3s;
+}
+
+.portrait-frame:hover {
+    transform: translateY(-5px); /* Efeito sutil ao passar o mouse */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.portrait-frame img {
+    width: 140px; /* Tamanho da foto */
+    height: 140px;
+    /* Transforma a imagem em círculo */
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    /* Usa a cor de destaque da Fase Digital */
+    border: 4px solid var(--accent-color); 
+}
+
+.member-name {
+    display: block;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--secondary-color); /* Branco */
+    line-height: 1.2;
+}
+
+.member-role {
+    display: block;
+    font-size: 0.9em;
+    color: #cccccc; /* Cinza claro para o cargo */
+    margin-top: 5px;
+}
+
+/* Responsividade: Em telas médias, passa para 2 colunas */
+@media (max-width: 992px) {
+    .team-portraits-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+/* Responsividade: Em telas pequenas, passa para 1 coluna */
+@media (max-width: 576px) {
+    .team-portraits-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.about-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.about-section .container {
+    max-width: 1000px;
+    padding: 40px 30px;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.about-section mission-text {
+    color: #f0f0f0;
+    font-size: 1.2em;
+    line-height: 1.8;
+    max-width: none;
+    margin: 0 auto;
+}
+
+.pillars-section {
+    background-image: url(../assets/images/Backgrounds/SpecBG.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 80px 0;
+    min-height: 400px;
+    background-color: #f0f0f0;
+    color: var(--secondary-color);
+    text-align: center;
+}
+
+.pillars-section h2 {
+    text-align: center;
+    color: var(--secondary-color);
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.pillars-section .container {
+    max-width: 1000px;
+    padding: 40px 30px;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.pillars-section pillar-item {
+    color: #f0f0f0;
+    font-size: 1.2em;
+    line-height: 1.8;
+    max-width: none;
+    margin: 0 auto;
 }
 
 .hero-section h1 {
@@ -217,14 +373,35 @@ section h2 {
 /* Pilares de Negócio (Lado A, B, C) */
 .pillars-section .container {
     display: flex;
+    flex-wrap: wrap;
     gap: 30px;
     text-align: center;
+    justify-content: center;
 }
 
 .pillar-item {
-    flex: 1;
+    flex: 0 1 48%;
     padding: 20px;
     border: 1px solid #eee;
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.pillar-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.pillar-item p {
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.cta-button-secondary-cta {
+    text-decoration: none;
+    color: var(--accent-color);
+    font-weight: bold;
 }
 
 /* Seção com Fundo Escuro */
@@ -233,14 +410,176 @@ section h2 {
     color: var(--secondary-color);
 }
 
-.dark-bg h2, .dark-bg h4 {
-    color: var(--accent-color);
+.medium-dark-bg {
+    background-color: var(--dark-gray);
+    color: var(--secondary-color);
 }
 
+.dark-bg h2,
+.dark-bg h4 {
+    color: var(--accent-color);
+}
+/* ------------------------------------------------ Cases -------------------------------------------------------------------- */
+/* Seção de Cases */
+.cases-section {
+    align-items: center;
+    justify-content: center;
+    padding: 80px 0;
+    /* O fundo escuro vem da classe .dark-bg aplicada no HTML */
+}
+
+.cases-section h2 {
+    /* Cor do título já definida pela classe .dark-bg h2 */
+    color: var(--primary-color);
+    margin-bottom: 50px;
+}
+
+/* Grid para Organizar os Cards (4 colunas como no modelo) */
+.case-gallery-grid {
+    display: grid;
+    /* 4 colunas de largura igual, espaçadas */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+    justify-items: center; /* Centraliza os itens na célula */
+    margin: 0 auto;
+    max-width: 1000px; /* Limita a largura do grid */
+}
+
+/* Estilo do Card Individual */
+.case-item-card {
+    /* Fundo escuro sutil para os cards */
+    background-color: #222222; 
+    border-radius: 5px;
+    width: 100%;
+    min-height: 250px; /* Altura mínima para o visual de card */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 0 15px 0; /* Padding apenas na parte inferior */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+/* Tag de Categoria (no topo do card) */
+.case-header-tag {
+    background-color: var(--accent-color); /* Fundo ciano/azul claro */
+    color: var(--primary-color); /* Texto preto */
+    font-size: 0.8em;
+    font-weight: bold;
+    padding: 8px 15px;
+    width: 100%;
+    text-align: center;
+ 
+    /* margin-bottom: 20px; */
+}
+
+/* Imagem do Logo do Parceiro/Cliente */
+.case-item-card img {
+    width: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.shadow-card :hover{
+    transform: translateY(-5px); /* Efeito sutil ao passar o mouse */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Nome do Cliente (Abaixo da Imagem) */
+.case-client-name {
+    color: var(--secondary-color); /* Texto branco */
+    width: 100%;
+    text-align: center;
+    font-size: 0.9em;
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+/* Responsividade: 
+   Em telas médias (tablets), passa para 2 colunas */
+@media (max-width: 992px) {
+    .case-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Em telas pequenas (celulares), passa para 1 coluna */
+@media (max-width: 576px) {
+    .case-gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --------------------------------------------- Agradecimentos -------------------------------------------------------------- */
+/* Estilos para a Seção de Autoridade e Logos */
+.authority-section h2 {
+    margin-bottom: 5px;
+    
+}
+.authority-section .cta-link {
+    background-color: #333333;
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+/* .authority-section h2 {
+    color: var(--primary-color); /* Retorna a cor do título para a cor principal (preto) 
+} */
+
+.partner-logos {
+    display: flex;
+    /* Distribui os logos de forma uniforme com espaço entre eles */
+    justify-content: space-around; 
+    align-items: center;
+    /* Adiciona margem vertical para separar do título e do botão */
+    margin: 0px 0; 
+    margin-bottom: 10px;
+    /* Garante que o container ocupe a largura total */
+    width: 100%; 
+}
+
+.partner-logos img {
+    /* CONTROLE DE TAMANHO: Altere o max-height para ajustar o tamanho */
+    max-height: 50px; 
+    
+    /* Garante que o logo não estique, mas caiba no max-height */
+    object-fit: contain; 
+    
+    /* Largura máxima para evitar logos gigantes */
+    max-width: 18%; 
+    
+    /* Efeito sutil para integrar ao design */
+    opacity: 0.7; 
+    transition: opacity 0.3s;
+}
+
+.partner-logos img:hover {
+    opacity: 1;
+}
+
+/* Responsividade: Em telas menores (ex: mobile), os logos se empilham */
+@media (max-width: 768px) {
+    .partner-logos {
+        /* Permite que os logos quebrem para a próxima linha */
+        flex-wrap: wrap; 
+        /* Alinha no centro quando quebram */
+        justify-content: center; 
+        gap: 20px;
+    }
+    
+    .partner-logos img {
+        /* Garante que cada logo ocupe até 40% da largura em telas menores */
+        max-width: 40%; 
+    }
+}
+/* ----------------------------------------------------------------------------------------------------------------------------- */
 /* Formulário de Contato */
 .contact-form {
     max-width: 600px;
     margin: 0 auto;
+    margin-bottom: 10px;
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -254,15 +593,14 @@ section h2 {
 .contact-section h2 {
     color: #00bcd4;
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .contact-form .cta-button {
     background-color: #00bcd4;
     color: var(--secondary-color);
     padding: 15px 30px;
-    font-size: 1.2em
-    pointer;
+    font-size: 1.2em pointer;
     border: none;
     border-radius: 5px;
     box-shadow: none;
@@ -270,7 +608,7 @@ section h2 {
 }
 
 .contact-form .cta-button:focus,
-.contact-form .cta-button:active{
+.contact-form .cta-button:active {
     border: none;
     outline: none;
     box-shadow: none;
@@ -280,7 +618,8 @@ section h2 {
     background-color: #00a4b8;
 }
 
-.contact-form input, .contact-form textarea {
+.contact-form input,
+.contact-form textarea {
     padding: 15px;
     border: none;
     box-shadow: none;
@@ -289,11 +628,20 @@ section h2 {
     width: 100%;
     font-size: 1em;
 }
-
+/* ----------------------------------------------------------------------------------------------------------------------------- */
 /* Footer */
 .main-footer {
     background-color: #111;
     color: #bbb;
-    padding: 30px 0;
+    padding: 10px 0;
     text-align: center;
+}
+
+.FRAME{
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo semi-transparente escuro para destacar */
+    padding: 25px 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra suave */
+    transition: transform 0.3s;
 }
