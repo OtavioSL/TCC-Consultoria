@@ -1,6 +1,58 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    // 1. Menu Fixo / Sticky Header
+    // 1. Menu Mobile Toggle
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
+    const menuOverlay = document.querySelector('.menu-overlay');
+    const navLinks = document.querySelectorAll('.main-nav a');
+    
+    function toggleMenu() {
+        menuToggle.classList.toggle('active');
+        mainNav.classList.toggle('active');
+        menuOverlay.classList.toggle('active');
+        document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
+        
+        // Controlar autoplay do carrossel
+        if (window.carouselControls) {
+            if (mainNav.classList.contains('active')) {
+                window.carouselControls.stop();
+            } else {
+                window.carouselControls.start();
+            }
+        }
+    }
+    
+    function closeMenu() {
+        menuToggle.classList.remove('active');
+        mainNav.classList.remove('active');
+        menuOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+        
+        // Reiniciar autoplay do carrossel
+        if (window.carouselControls) {
+            window.carouselControls.start();
+        }
+    }
+    
+    if (menuToggle) {
+        menuToggle.addEventListener('click', toggleMenu);
+    }
+    
+    // Fechar menu ao clicar no overlay
+    if (menuOverlay) {
+        menuOverlay.addEventListener('click', closeMenu);
+    }
+    
+    // Fechar menu ao clicar em um link
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.innerWidth <= 768) {
+                closeMenu();
+            }
+        });
+    });
+
+    // 2. Menu Fixo / Sticky Header
     const header = document.querySelector('.main-header');
     
     window.addEventListener('scroll', function() {
@@ -11,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // 2. Animação de Scroll Suave (Smooth Scroll)
+    // 3. Animação de Scroll Suave (Smooth Scroll)
     document.querySelectorAll('a[href^="#home"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -35,28 +87,4 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-
-    // 3. Inicialização do Swiper Carousel
-    const swiperContainer = document.querySelector('.mySwiper');
-
-    if (swiperContainer) { // Verifica se o carrossel existe na página
-        new Swiper('.mySwiper', {
-            loop: true, // Faz o carrossel girar infinitamente
-            autoplay: {
-                delay: 5000, // 5 segundos de espera
-                disableOnInteraction: false, // Continua o autoplay mesmo após interação manual
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            // Usando 'slide' conforme sua configuração, mas removendo a configuração 'fade' conflitante
-            effect: 'slide', 
-            speed: 800, // Velocidade da transição em ms
-        });
-    }
 });

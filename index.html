@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>Fase Digital - A proxima fase do seu negócio</title>
     <link rel="stylesheet" href="./public/styles/style.css">
     <link rel="shortcut icon" href="./public/assets/images/favicon.ico" type="image/x-icon">
@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <div class="menu-overlay"></div>
 
     <header class="main-header">
         <div class="container">
@@ -18,14 +19,22 @@
                 <div class="logoImg"><img src="./public/assets/images/LogoSemFundo2-removebg-preview-cropped.png"
                         alt="Logo Da Empresa"></div><span>Fase Digital</span>
             </a>
+            
+            <button class="mobile-menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
             <nav class="main-nav">
                 <ul>
                     <li><a href="#quem-somos">Equipe</a></li>
                     <li><a href="#pilares">Especializações</a></li>
                     <li><a href="#cases">Cases</a></li>
+                    <li class="mobile-only"><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
-            <a href="#contato" class="cta-button primary-cta">FALE COM UM CONSULTOR</a>
+            <a href="#contato" class="cta-button primary-cta desktop-only">FALE COM UM CONSULTOR</a>
         </div>
     </header>
 
@@ -109,40 +118,42 @@
         </section>
         <hr>
         <section id="pilares" class="pillars-section">
-            <div class="container ">
+            <div class="container">
                 <h2>Nossas Especialidades</h2>
-                <div class="pillar-item">
-                    <h3>Gamificação</h3>
-                    <p>é a aplicação de elementos e mecânicas de jogos (como pontos, desafios e recompensas) em
-                        contextos não relacionados a jogos, como educação ou negócios, para aumentar o engajamento e
-                        motivar pessoas. Seu objetivo é tornar tarefas mais lúdicas, atraentes e motivadoras, usando a
-                        criatividade para resolver problemas práticos, promover o aprendizado ou impulsionar a
-                        produtividade. </p>
-                    <a href="#" class="cta-link">SAIBA MAIS</a>
-                </div>
-                <div class="pillar-item">
-                    <h3>Game Marketing</h3>
-                    <p>Conjunto de estratégias que unem o universo dos jogos digitais e da cultura gamer à construção e
-                        programação de sites e aplicativos, promovendo marcas, produtos e serviços por meio de
-                        experiências interativas. Essa abordagem integra o desenvolvimento completo — do design visual e
-                        da interface do usuário (Front-end) até as funcionalidades e o processamento de dados (Back-end)
-                        — com o objetivo de criar soluções digitais envolventes, inovadoras e capazes de gerar
-                        engajamento genuíno com o público.</p>
-                    <a href="#" class="cta-link">SAIBA MAIS</a>
-                </div>
-                <div class="pillar-item">
-                    <h3>Comunicação</h3>
-                    <p>Comunicação na Fase Digital é a troca de informações com objetivo de identificar e resolver
-                        problemas e alinhar equipes contruindo uma imagem positiva e fortalecendo o relacionamento com
-                        nossos clientes. Garantimos a compreensão e a aplicaçao das soluções propostas pela nossa
-                        consultoria. </p>
-                    <!-- <a href="#" class="cta-link">SAIBA MAIS</a> -->
-                </div>
-                <div class="pillar-item">
-                    <h3>Desenvolvimento</h3>
-                    <p>Construção e programação de sites e aplicativos para internet ou intranets, englobando desde a
-                        aparência visual do usuário, Front-end até as funcionalidades e o processamento Back-end.</p>
-                    <!-- <a href="#" class="cta-link">SAIBA MAIS</a> -->
+                <div class="pillars-grid">
+                    <div class="pillar-item">
+                        <h3>Gamificação</h3>
+                        <p>é a aplicação de elementos e mecânicas de jogos (como pontos, desafios e recompensas) em
+                            contextos não relacionados a jogos, como educação ou negócios, para aumentar o engajamento e
+                            motivar pessoas. Seu objetivo é tornar tarefas mais lúdicas, atraentes e motivadoras, usando a
+                            criatividade para resolver problemas práticos, promover o aprendizado ou impulsionar a
+                            produtividade. </p>
+                        <a href="https://www.alura.com.br/artigos/gamificacao-seus-beneficios?srsltid=AfmBOoqDVqcYnwZgbv8aSpCaCy3X5aj3lCDlUS_VgI_RzPXrK29QVWdx" target="_blank" class="cta-link">SAIBA MAIS</a>
+                    </div>
+                    <div class="pillar-item">
+                        <h3>Game Marketing</h3>
+                        <p>Conjunto de estratégias que unem o universo dos jogos digitais e da cultura gamer à construção e
+                            programação de sites e aplicativos, promovendo marcas, produtos e serviços por meio de
+                            experiências interativas. Essa abordagem integra o desenvolvimento completo — do design visual e
+                            da interface do usuário (Front-end) até as funcionalidades e o processamento de dados (Back-end)
+                            — com o objetivo de criar soluções digitais envolventes, inovadoras e capazes de gerar
+                            engajamento genuíno com o público.</p>
+                        <a href="https://gogamers.gg/game-marketing/game-marketing/" target="_blank" class="cta-link">SAIBA MAIS</a>
+                    </div>
+                    <div class="pillar-item">
+                        <h3>Comunicação</h3>
+                        <p>Comunicação na Fase Digital é a troca de informações com objetivo de identificar e resolver
+                            problemas e alinhar equipes contruindo uma imagem positiva e fortalecendo o relacionamento com
+                            nossos clientes. Garantimos a compreensão e a aplicaçao das soluções propostas pela nossa
+                            consultoria. </p>
+                        <!-- <a href="#" class="cta-link">SAIBA MAIS</a> -->
+                    </div>
+                    <div class="pillar-item">
+                        <h3>Desenvolvimento</h3>
+                        <p>Construção e programação de sites e aplicativos para internet ou intranets, englobando desde a
+                            aparência visual do usuário, Front-end até as funcionalidades e o processamento Back-end.</p>
+                        <!-- <a href="#" class="cta-link">SAIBA MAIS</a> -->
+                    </div>
                 </div>
             </div>
         </section>
@@ -161,11 +172,11 @@
             </div>
             
 
-            <div class="case-item-card">
+            <a href="https://otaviosl.github.io/DevGames/" target="_blank" class="case-item-card" style="text-decoration: none; color: inherit;">
                 <div class="case-header-tag">GAME MARKETING</div>
                 <img src="./public/assets/images/cases/DevGames.png" alt="Logo RPG Dev Studios">
                 <span class="case-client-name">DevGames</span>
-            </div>
+            </a>
 
             <div class="case-item-card ">
                 <div class="case-header-tag">DESENVOLVIMENTO WEB</div>
@@ -214,8 +225,9 @@
         </div>
     </footer>
 
-    <script src="./public/js/main.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="./public/js/carousel.js"></script>
+    <script src="./public/js/main.js"></script>
 </body>
 
 </html>
