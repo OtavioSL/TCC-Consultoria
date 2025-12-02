@@ -7,10 +7,10 @@ document.addEventListener('DOMContentLoaded', function() {
     if (swiperContainer) { // Verifica se o carrossel existe na página
         swiper = new Swiper('.mySwiper', {
             loop: true, // Faz o carrossel girar infinitamente
-            // autoplay: {
-            //     delay: 5000, // 5 segundos de espera
-            //     disableOnInteraction: false, // Continua o autoplay mesmo após interação manual
-            // },
+             autoplay: {
+                delay: 5000, // 5 segundos de espera
+                disableOnInteraction: false, // Continua o autoplay mesmo após interação manual
+             },
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
